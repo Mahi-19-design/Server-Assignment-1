@@ -1,48 +1,81 @@
-🎓 Student CGPA API
-(Using In-Memory JSON Database)
-📌 Objective
-
-Build a REST API using Express.js that manages student academic performance records stored in an in-memory JSON array.
-
-This project:
-
-Uses only GET routes
-
-Includes static and dynamic routes
-
-Follows REST principles
-
-Returns proper HTTP status codes
-
-Does NOT use any database
-
-🛠 Tech Stack
-
-Node.js
-
-Express.js
-
-CORS
-
-JavaScript
 
 
-🚀 How To Run Locally
-1️⃣ Clone Repository
+# 🎓 **Student CGPA API**
+
+### 📘 *Using In-Memory JSON Database*
+
+---
+
+## 🚀 **Project Objective**
+
+This project is a **REST API built using Express.js** to manage student academic performance records stored in an in-memory JSON array.
+
+✔ Uses only **GET routes**
+✔ Includes **Static & Dynamic routes**
+✔ Follows **REST principles**
+✔ Returns proper **HTTP status codes**
+✔ No external database used
+
+---
+
+## 🛠 **Tech Stack**
+
+* **Node.js**
+* **Express.js**
+* **CORS**
+* **JavaScript**
+
+---
+
+# 📂 **Project Structure**
+
+```
+student-cgpa-api/
+│
+├── node_modules/
+├── package.json
+├── package-lock.json
+├── .gitignore
+├── server.js
+└── README.md
+```
+
+---
+
+# ⚙️ **How To Run Locally**
+
+### 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/your-username/student-cgpa-api.git
 cd student-cgpa-api
-2️⃣ Install Dependencies
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
 npm install
-3️⃣ Start Server
+```
+
+### 3️⃣ Start Server
+
+```bash
 npm start
+```
 
-Server runs on:
+📍 Server runs on:
 
+```
 http://localhost:3000
-📊 Student Data Structure
+```
+
+---
+
+# 📊 **Student Data Structure**
 
 Each student record:
 
+```js
 {
   id: 1,
   name: "Aarav Sharma",
@@ -50,151 +83,157 @@ Each student record:
   semester: 8,
   cgpa: 9.3
 }
+```
 
-Minimum 10 records stored in an in-memory array.
+✔ Minimum **10 student records** stored in an in-memory array.
 
-📌 Implemented Routes
-✅ 1. GET /students
+---
 
-Returns all students.
+# 📌 **Implemented API Routes**
 
-Status Code: 200
+---
 
-Returns full JSON array
+## 🔹 1️⃣ **GET /students**
 
-Example:
+📌 Returns **all students**
 
-GET /students
-✅ 2. GET /students/topper
+* Status Code: **200**
+* Returns full JSON array
 
-Returns the student with highest CGPA.
+---
 
-Status Code: 200
+## 🔹 2️⃣ **GET /students/topper**
 
-Returns single student object
+📌 Returns student with **highest CGPA**
 
-If no students exist → 404
+* Status Code: **200**
+* Returns single student object
+* If no students exist → **404**
 
-Core Logic Used:
+💡 Logic Used:
 
-reduce() to find maximum CGPA
+* `reduce()` for max CGPA calculation
 
-Example:
+---
 
-GET /students/topper
-✅ 3. GET /students/average
+## 🔹 3️⃣ **GET /students/average**
 
-Returns average CGPA of all students.
+📌 Returns **average CGPA**
 
-Response Format:
+### Response:
 
+```json
 {
   "averageCGPA": 8.51
 }
+```
 
-Core Logic Used:
+💡 Logic Used:
 
-Aggregation using reduce()
+* Aggregation using `reduce()`
 
-Data transformation
+---
 
-Example:
+## 🔹 4️⃣ **GET /students/count**
 
-GET /students/average
-✅ 4. GET /students/count
+📌 Returns **total number of students**
 
-Returns total number of students.
-
-Response:
-
+```json
 {
   "totalStudents": 10
 }
+```
 
-Core Logic Used:
+---
 
-Array length property
+# 🔥 **Dynamic Routes**
+
+---
+
+## 🔹 5️⃣ **GET /students/:id**
+
+📌 Returns student by **ID**
 
 Example:
 
-GET /students/count
-🔥 Dynamic Routes
-✅ 5. GET /students/:id
-
-Returns student by ID.
-
-Example:
-
+```
 GET /students/3
-Expected Behavior
+```
 
-If student exists → 200
+### Behavior:
 
-If not found → 404
+✔ If student exists → **200**
+❌ If not found → **404**
 
-Core Concepts:
+---
 
-Route parameters
+## 🔹 6️⃣ **GET /students/branch/:branchName**
 
-req.params
-
-Proper error handling
-
-✅ 6. GET /students/branch/:branchName
-
-Returns students of a specific branch.
+📌 Returns students from a specific branch
 
 Example:
 
+```
 GET /students/branch/CSE
-Expected Behavior
+```
 
-Returns array of matching students
+### Behavior:
 
-Case-insensitive filtering
+✔ Case-insensitive filtering
+✔ Returns array of students
+✔ If none found → returns empty array `[]`
 
-If no students found → returns empty array []
+📝 Justification:
+The route is valid and request is correct. No matching data is not an error, so we return **200 with empty array**.
 
-Justification:
-The route exists and request is valid.
-No matching data is not an error, so we return 200 with empty array.
+---
 
-Core Concepts:
+# ❗ **HTTP Status Codes Used**
 
-Filtering
+| Status Code | Meaning               |
+| ----------- | --------------------- |
+| **200**     | Success               |
+| **404**     | Resource not found    |
+| **500**     | Internal server error |
 
-Case handling using .toLowerCase()
+---
 
-Clean REST route design
+# 🌍 **Deployment Links**
 
-❗ HTTP Status Codes Used
-Status Code	Meaning
-200	Successful request
-404	Resource not found
-500	Server error
-🌐 Deployment
-🔗 GitHub Repository
-https://github.com/your-username/student-cgpa-api
-🔗 Postman Documentation
+### 🔗 GitHub Repository
+
+```
+https://github.com/Mahi-19-design/Server-Assignment-1
+```
+
+### 🔗 Postman Documentation
+
+```
 https://documenter.getpostman.com/view/xxxxxx
-🔗 Render Deployment
-https://student-cgpa-api.onrender.com
-📘 Learning Outcomes
+```
 
-After completing this assignment:
+### 🔗 Render Deployment
 
-Designed RESTful GET routes
+```
+https://server-assignment-1-vcas.onrender.com/
+```
 
-Used dynamic route parameters
+---
 
-Implemented filtering and aggregation
+# 🎯 **Learning Outcomes**
 
-Returned structured JSON responses
+After completing this assignment, I learned:
 
-Deployed backend API on Render
+* ✔ Designing RESTful APIs
+* ✔ Handling dynamic route parameters
+* ✔ Filtering & aggregation logic
+* ✔ Returning structured JSON responses
+* ✔ Deploying backend APIs on Render
+* ✔ Documenting APIs professionally
 
-Documented APIs using Postman
+---
 
-👩‍💻 Author
+# 👩‍💻 **Author**
 
-Mahi Patel
+**Mahi Patel**
+
