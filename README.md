@@ -209,7 +209,7 @@ https://github.com/Mahi-19-design/Server-Assignment-1
 ### 🔗 Postman Documentation
 
 ```
-https://documenter.getpostman.com/view/xxxxxx
+https://documenter.getpostman.com/view/50840755/2sBXcEmML5
 ```
 
 ### 🔗 Render Deployment
@@ -218,18 +218,6 @@ https://documenter.getpostman.com/view/xxxxxx
 https://server-assignment-1-vcas.onrender.com/
 ```
 
----
-
-# 🎯 **Learning Outcomes**
-
-After completing this assignment, I learned:
-
-* ✔ Designing RESTful APIs
-* ✔ Handling dynamic route parameters
-* ✔ Filtering & aggregation logic
-* ✔ Returning structured JSON responses
-* ✔ Deploying backend APIs on Render
-* ✔ Documenting APIs professionally
 
 ---
 
